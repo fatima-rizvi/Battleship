@@ -23,7 +23,7 @@ print(ship_col)
 
 turns = 4 # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
 for turn in range(turns):
-    print(f"\nTurn #{turn}")
+    print(f"\nTurn #{turn + 1}")
 
     guess_row = int(input("Guess row (1 - 5): ")) - 1 # Minus one accounts for index position starting at 0
     guess_col = int(input("Guess col (1 - 5): ")) - 1
