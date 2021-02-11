@@ -18,20 +18,27 @@ def random_col(board):
 ship_row = random_row(board)
 ship_col = random_col(board)
 
-guess_row = int(input("Guess row: "))
-guess_col = int(input("Guess col: "))
-
-print(ship_col)
 print(ship_row)
+print(ship_col)
 
-if board[guess_row][guess_col] == "X":
-    print("You already guessed that one")
-elif guess_row == ship_row and guess_col == ship_col:
-    print("Argh! You sank my battleship!")
-else: 
-    if guess_row not in range(5) or guess_col not in range(5):
-        print("That spot isn't in the ocean! What are you playing at? Try again.")
-    else:
-        print("Ha! You missed my battleship!")
-        board[guess_row][guess_col] = "X"
-        print_board(board)
+turns = 4 # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
+for turn in range(turns):
+    # print(turn)
+
+    guess_row = int(input("Guess row: "))
+    guess_col = int(input("Guess col: "))
+
+
+    if board[guess_row][guess_col] == "X":
+        print("You already guessed that one")
+    elif guess_row == ship_row and guess_col == ship_col:
+        print("Argh! You sank my battleship!")
+        break
+    else: 
+        if guess_row not in range(5) or guess_col not in range(5):
+            print("That spot isn't in the ocean! What are you playing at? Try again.")
+        else:
+            print("Ha! You missed my battleship!")
+            board[guess_row][guess_col] = "X"
+            print_board(board)
+
