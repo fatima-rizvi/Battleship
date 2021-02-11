@@ -17,3 +17,6 @@ def random_col(board):
 
 ship_row = random_row(board)
 ship_col = random_col(board)
+
+guess_row = int(input("Guess row: "))
+guess_col = int(input("Guess col: "))
