@@ -25,4 +25,6 @@ print(ship_col)
 print(ship_row)
 
 if guess_row == ship_row and guess_col == ship_col:
-    print("Argh! You sank my battle ship!")
+    print("Argh! You sank my battleship!")
+else: 
+    print("Ha! You missed my battleship!")
