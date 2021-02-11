@@ -46,7 +46,7 @@ def select_diff():    # Function to select difficulty level, which affects numbe
 
 
 
-turns = 4 # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
+turns = select_diff() # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
 for turn in range(turns):
     print(f"\nTurn #{turn + 1}")
 
