@@ -68,18 +68,18 @@ while playing.lower() != "n":
                 board[guess_row][guess_col] = "X"
                 print_board(board)
 
-        if turn == turns:
+        else:
+            print("That spot isn't in the ocean! What are you playing at?")
+        
+        if (turn + 1) == turns: # beause we get turns from range(turns)
             print("You lost! Better luck next time!\n")
             choice = ""
             while choice.lower() not in ["n", "y"]:
-                choice = input("Would you like to play again? (y/n)")
+                choice = input("Would you like to play again? (y/n): ")
                 if choice.lower() == 'y':
                     pass
                 elif choice.lower() == 'n':
                     playing = choice
                 else:
                     print("Sorry, that is not an option.")
-
-        else:
-            print("That spot isn't in the ocean! What are you playing at?")
 
