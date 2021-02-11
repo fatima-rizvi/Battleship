@@ -18,8 +18,8 @@ def random_col(board):
 ship_row = random_row(board)
 ship_col = random_col(board)
 
-print(ship_row)
-print(ship_col)
+print(f"Row num: {ship_row + 1}")
+print(f"Col num: {ship_col + 1}")
 
 turns = 4 # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
 for turn in range(turns):
