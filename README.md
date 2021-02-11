@@ -1,2 +1,2 @@
 # Battleship
-Python Battleship game
+Basic python Battleship game
