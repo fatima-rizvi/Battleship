@@ -21,6 +21,22 @@ ship_col = random_col(board)
 print(f"Row num: {ship_row + 1}")
 print(f"Col num: {ship_col + 1}")
 
+def select_diff():    # FUnction to select difficulty level, which affects number of turns
+    choice = int(input("""
+    ----------------------------
+              BATTLESHIP                
+
+         Select difficulty:        
+
+       1. Fun      (25 turns) 
+       2. Easy     (10 turns)
+       3. Normal    (5 turns)
+       4. Hard      (3 turns) 
+       5. Expert     (1 turn)    
+    ----------------------------
+    Difficulty (1/2/3/4/5): """))
+
+
 turns = 4 # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
 for turn in range(turns):
     print(f"\nTurn #{turn + 1}")
