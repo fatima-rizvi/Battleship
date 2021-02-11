@@ -32,13 +32,16 @@ for turn in range(turns):
     if board[guess_row][guess_col] == "X":
         print("You already guessed that one")
     elif guess_row == ship_row and guess_col == ship_col:
-        print("Argh! You sank my battleship!")
+        print("Argh! You sank my battleship! You win!")
         break
     else: 
         if guess_row not in range(5) or guess_col not in range(5):
-            print("That spot isn't in the ocean! What are you playing at? Try again.")
+            print("That spot isn't in the ocean! What are you playing at?")
         else:
             print("Ha! You missed my battleship!")
             board[guess_row][guess_col] = "X"
             print_board(board)
+
+        if turn == turns:
+            print("You lost! Better luck next time!")
 
