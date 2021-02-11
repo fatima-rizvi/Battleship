@@ -80,6 +80,7 @@ while playing.lower() != "n":
                     pass
                 elif choice.lower() == 'n':
                     playing = choice
+                    print("Okay, see you around!")
                 else:
                     print("Sorry, that is not an option.")
 
