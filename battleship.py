@@ -22,25 +22,27 @@ print(f"Row num: {ship_row + 1}")
 print(f"Col num: {ship_col + 1}")
 
 def select_diff():    # Function to select difficulty level, which affects number of turns
-    all_turns = { 1: 25, 2: 10, 3: 5, 4: 3, 5: 1 }
+    all_turns = { 1: [25, "Fun"], 2: [10, "Easy"], 3: [5, "Normal"], 4: [3, "Hard"], 5: [1, "Expert"] }
     
     choice = " "
     while choice not in all_turns:
         choice = int(input("""
-        ----------------------------
-                BATTLESHIP                
+----------------------------
+        BATTLESHIP                
 
-            Select difficulty:        
+     Select difficulty:        
 
-        1. Fun      (25 turns) 
-        2. Easy     (10 turns)
-        3. Normal    (5 turns)
-        4. Hard      (3 turns) 
-        5. Expert     (1 turn)    
-        ----------------------------
-        Difficulty (1/2/3/4/5): """))
+   1. Fun      (25 turns) 
+   2. Easy     (10 turns)
+   3. Normal    (5 turns)
+   4. Hard      (3 turns) 
+   5. Expert     (1 turn)    
+----------------------------
+Difficulty (1/2/3/4/5): """))
+
         if choice in all_turns:
-            return all_turns[choice]
+            print(f"\nSelected: {all_turns[choice][1]}")
+            return all_turns[choice][0]
         else:
             print("Sorry, that is not an option. Please try again.")
 
