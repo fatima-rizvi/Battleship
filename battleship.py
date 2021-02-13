@@ -1,3 +1,4 @@
+import time
 from random import randint
 
 board = []
@@ -39,6 +40,8 @@ def select_diff():    # Function to select difficulty level, which affects numbe
     5. Expert     (1 turn)    
     ----------------------------
     Difficulty (1/2/3/4/5): """))
+
+        time.sleep(.5)
 
         if choice in all_turns:
             print(f"\nSelected: {all_turns[choice][1]}")
