@@ -90,7 +90,8 @@ while playing.lower() != "n":
                     print("Okay, see you around!")
                 else:
                     print("Sorry, that is not an option.")
-    
+
+    time.sleep(.5)
     print(f"""
                 SCORE:        
     ----------------------------
