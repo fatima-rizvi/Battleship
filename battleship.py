@@ -62,6 +62,7 @@ while playing.lower() != "n":
             if board[guess_row][guess_col] == "X":
                 print("You already guessed that one")
             elif guess_row == ship_row and guess_col == ship_col:
+                wins += 1
                 print("Argh! You sank my battleship! You win!")
                 break
             else: 
@@ -73,6 +74,7 @@ while playing.lower() != "n":
             print("That spot isn't in the ocean! What are you playing at?")
         
         if (turn + 1) == turns: # beause we get turns from range(turns)
+            losses += 1
             print("You lost! Better luck next time!\n")
             choice = ""
             while choice.lower() not in ["n", "y"]:
