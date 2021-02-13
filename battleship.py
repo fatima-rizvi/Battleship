@@ -60,6 +60,7 @@ while playing.lower() != "n":
         guess_row = int(input("Guess row (1 - 5): ")) - 1 # Minus one accounts for index position starting at 0
         guess_col = int(input("Guess col (1 - 5): ")) - 1
 
+        time.sleep(.5)
 
         if guess_row in range(5) and guess_col in range(5):
             if board[guess_row][guess_col] == "X":
