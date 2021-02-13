@@ -27,18 +27,18 @@ def select_diff():    # Function to select difficulty level, which affects numbe
     choice = " "
     while choice not in all_turns:
         choice = int(input("""
-----------------------------
-        BATTLESHIP                
+    ----------------------------
+            BATTLESHIP                
 
-     Select difficulty:        
+        Select difficulty:        
 
-   1. Fun      (25 turns) 
-   2. Easy     (10 turns)
-   3. Normal    (5 turns)
-   4. Hard      (3 turns) 
-   5. Expert     (1 turn)    
-----------------------------
-Difficulty (1/2/3/4/5): """))
+    1. Fun      (25 turns) 
+    2. Easy     (10 turns)
+    3. Normal    (5 turns)
+    4. Hard      (3 turns) 
+    5. Expert     (1 turn)    
+    ----------------------------
+    Difficulty (1/2/3/4/5): """))
 
         if choice in all_turns:
             print(f"\nSelected: {all_turns[choice][1]}")
@@ -80,10 +80,18 @@ while playing.lower() != "n":
             while choice.lower() not in ["n", "y"]:
                 choice = input("Would you like to play again? (y/n): ")
                 if choice.lower() == 'y':
-                    pass
+                    print("Okay, let's play!")
                 elif choice.lower() == 'n':
                     playing = choice
                     print("Okay, see you around!")
                 else:
                     print("Sorry, that is not an option.")
+    
+    print(f"""
+                SCORE:        
+    ----------------------------
+            PLAYER: {wins} 
+            CPU:    {losses} 
+    ----------------------------
+    """)
 
