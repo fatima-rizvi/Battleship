@@ -46,7 +46,8 @@ Difficulty (1/2/3/4/5): """))
         else:
             print("Sorry, that is not an option. Please try again.")
 
-
+wins = 0
+losses = 0
 playing = ""
 while playing.lower() != "n":
     turns = select_diff() # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
