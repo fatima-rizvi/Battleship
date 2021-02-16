@@ -81,6 +81,7 @@ while playing.lower() != "n":
             elif guess_row == ship_row and guess_col == ship_col:
                 wins += 1
                 print("Argh! You sank my battleship! You win!")
+                playing = still_playing()
                 break
             else: 
                 print("Ha! You missed my battleship!")
@@ -93,6 +94,7 @@ while playing.lower() != "n":
         if (turn + 1) == turns: # beause we get turns from range(turns)
             losses += 1
             print("You lost! Better luck next time!\n")
+            playing = still_playing()
             # choice = ""
             # while choice.lower() not in ["n", "y"]:
             #     choice = input("Would you like to play again? (y/n): ")
