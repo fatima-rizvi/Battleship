@@ -43,6 +43,18 @@ def select_diff():    # Function to select difficulty level, which affects numbe
         else:
             print("Sorry, that is not an option. Please try again.")
 
+def still_playing():
+    choice = ""
+    while choice.lower() not in ["n", "y"]:
+        choice = input("Would you like to play again? (y/n): ")
+        if choice.lower() == 'y':
+            print("Okay, let's play!")
+        elif choice.lower() == 'n':
+            print("Okay, see you around!")
+        else:
+            print("Sorry, that is not an option.")
+    return choice
+
 wins = 0
 losses = 0
 playing = ""
@@ -81,16 +93,16 @@ while playing.lower() != "n":
         if (turn + 1) == turns: # beause we get turns from range(turns)
             losses += 1
             print("You lost! Better luck next time!\n")
-            choice = ""
-            while choice.lower() not in ["n", "y"]:
-                choice = input("Would you like to play again? (y/n): ")
-                if choice.lower() == 'y':
-                    print("Okay, let's play!")
-                elif choice.lower() == 'n':
-                    playing = choice
-                    print("Okay, see you around!")
-                else:
-                    print("Sorry, that is not an option.")
+            # choice = ""
+            # while choice.lower() not in ["n", "y"]:
+            #     choice = input("Would you like to play again? (y/n): ")
+            #     if choice.lower() == 'y':
+            #         print("Okay, let's play!")
+            #     elif choice.lower() == 'n':
+            #         playing = choice
+            #         print("Okay, see you around!")
+            #     else:
+            #         print("Sorry, that is not an option.")
 
     time.sleep(.5)
     print(f"""
