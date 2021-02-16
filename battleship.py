@@ -16,12 +16,6 @@ def random_row(board):
 def random_col(board):
     return randint(0, len(board) -1)
 
-ship_row = random_row(board)
-ship_col = random_col(board)
-
-print(f"Row num: {ship_row + 1}")
-print(f"Col num: {ship_col + 1}")
-
 def select_diff():    # Function to select difficulty level, which affects number of turns
     all_turns = { 1: [25, "Fun"], 2: [10, "Easy"], 3: [5, "Normal"], 4: [3, "Hard"], 5: [1, "Expert"] }
     
@@ -53,6 +47,13 @@ wins = 0
 losses = 0
 playing = ""
 while playing.lower() != "n":
+
+    ship_row = random_row(board)
+    ship_col = random_col(board)
+
+    print(f"Row num: {ship_row + 1}")
+    print(f"Col num: {ship_col + 1}")
+
     turns = select_diff() # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
     for turn in range(turns):
         print(f"\nTurn #{turn + 1}")
