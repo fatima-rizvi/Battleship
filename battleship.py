@@ -16,12 +16,6 @@ def random_row(board):
 def random_col(board):
     return randint(0, len(board) -1)
 
-ship_row = random_row(board)
-ship_col = random_col(board)
-
-print(f"Row num: {ship_row + 1}")
-print(f"Col num: {ship_col + 1}")
-
 def select_diff():    # Function to select difficulty level, which affects number of turns
     all_turns = { 1: [25, "Fun"], 2: [10, "Easy"], 3: [5, "Normal"], 4: [3, "Hard"], 5: [1, "Expert"] }
     
@@ -49,10 +43,29 @@ def select_diff():    # Function to select difficulty level, which affects numbe
         else:
             print("Sorry, that is not an option. Please try again.")
 
+def still_playing():
+    choice = ""
+    while choice.lower() not in ["n", "y"]:
+        choice = input("Would you like to play again? (y/n): ")
+        if choice.lower() == 'y':
+            print("Okay, let's play!")
+        elif choice.lower() == 'n':
+            print("Okay, see you around!")
+        else:
+            print("Sorry, that is not an option.")
+    return choice
+
 wins = 0
 losses = 0
 playing = ""
 while playing.lower() != "n":
+
+    ship_row = random_row(board)
+    ship_col = random_col(board)
+
+    print(f"Row num: {ship_row + 1}")
+    print(f"Col num: {ship_col + 1}")
+
     turns = select_diff() # Allow the player 4 turns to hit the ship. Create an input to select ifficulty level with more or less turns.
     for turn in range(turns):
         print(f"\nTurn #{turn + 1}")
@@ -68,6 +81,7 @@ while playing.lower() != "n":
             elif guess_row == ship_row and guess_col == ship_col:
                 wins += 1
                 print("Argh! You sank my battleship! You win!")
+                playing = still_playing()
                 break
             else: 
                 print("Ha! You missed my battleship!")
@@ -80,16 +94,17 @@ while playing.lower() != "n":
         if (turn + 1) == turns: # beause we get turns from range(turns)
             losses += 1
             print("You lost! Better luck next time!\n")
-            choice = ""
-            while choice.lower() not in ["n", "y"]:
-                choice = input("Would you like to play again? (y/n): ")
-                if choice.lower() == 'y':
-                    print("Okay, let's play!")
-                elif choice.lower() == 'n':
-                    playing = choice
-                    print("Okay, see you around!")
-                else:
-                    print("Sorry, that is not an option.")
+            playing = still_playing()
+            # choice = ""
+            # while choice.lower() not in ["n", "y"]:
+            #     choice = input("Would you like to play again? (y/n): ")
+            #     if choice.lower() == 'y':
+            #         print("Okay, let's play!")
+            #     elif choice.lower() == 'n':
+            #         playing = choice
+            #         print("Okay, see you around!")
+            #     else:
+            #         print("Sorry, that is not an option.")
 
     time.sleep(.5)
     print(f"""
